@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пекарня "Название вашей пекарни"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header style="background-color: #ffb74d;">
+        <h1 style="color: #fff;">Добро пожаловать в пекарню "Название вашей пекарни"</h1>
+        <p style="color: #fff;">Здесь вы можете заказать свежие выпечку и десерты!</p>
+    </header>
+
+    <section id="menu">
+        <h2>Наше меню</h2>
+        <table>
+            <tr>
+                <th>Название</th>
+                <th>Цена</th>
+            </tr>
+            <tr>
+                <td>Хлеб</td>
+                <td>100 руб.</td>
+            </tr>
+            <tr>
+                <td>Пироги</td>
+                <td>200 руб.</td>
+            </tr>
+            <tr>
+                <td>Печенье</td>
+                <td>50 руб.</td>
+            </tr>
+            <tr>
+                <td>Торты</td>
+                <td>от 300 руб.</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="contact">
+        <h2>Свяжитесь с нами</h2>
+        <form id="contactForm">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+        <p id="formStatus" style="color: green; font-weight: bold;"></p>
+    </section>
+
+    <footer style="background-color: #616161; color: #fff;">
+        <p>&copy; 2024 Пекарня "Название вашей пекарни". Все права защищены.</p>
+        <p id="currentTime" style="margin-top: 10px; font-weight: bold;"></p>
+    </footer>
+
+    <script>
+        // Функция для вывода текущего времени на странице
+        function displayCurrentTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const currentTime = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('currentTime').textContent = currentTime;
+        }
+
+        // Вызываем функцию для первоначального отображения времени
+        displayCurrentTime();
+
+        // Обновляем время каждую секунду
+        setInterval(displayCurrentTime, 1000);
+
+        // Обработчик события отправки формы
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Отменяем стандартное поведение формы (перезагрузку страницы)
+            
+            // Ваш код здесь для обработки отправки формы (например, отправка данных на сервер)
+
+            // Выводим сообщение об успешной отправке
+            document.getElementById('formStatus').textContent = 'Спасибо! Ваше сообщение отправлено.';
+            
+            
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+        });
+    </script>
+</body>
+</html>
