@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5; /* Цвет фона страницы */
+    color: #333; /* Цвет текста */
+}
+
+header, footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e0e0e0; /* Цвет фона заголовка и подвала */
+}
+
+#menu {
+    padding: 20px;
+    background-color: #fff; /* Цвет фона блока с меню */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень блока */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Убираем промежутки между ячейками */
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd; /* Границы таблицы и ячеек */
+    padding: 10px;
+}
+
+/* Шахматный порядок цветов для строк таблицы */
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff; /* Цвет фона формы */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень формы */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Подгоняем цвет рамки под фон */
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
